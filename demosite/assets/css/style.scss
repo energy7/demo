@@ -5,7 +5,12 @@ html {
 }
 
 body {
-  background: url(apple-touch-icon.png) no-repeat center center;
+  background: #F6F3EF;
+}
+
+
+.primary {
+    background: #230C0C;
 }
 
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
