@@ -1,0 +1,428 @@
+// TYPEFACES
+
+%serif {
+  font-family: 'Vitesse A', 'Vitesse B', Vitesse, Georgia, serif; 
+  font-weight: 400; 
+  font-style: normal;
+}
+
+%sans {
+  font-family: 'Gotham Narrow A', 'Gotham Narrow B';
+  font-weight: 400; 
+  font-style: normal;
+}
+
+%square {
+  font-family: 'Forza SSm A', 'Forza SSm B', Forza, sans-serif; 
+  font-weight: 400; 
+  font-style: normal;
+}
+
+
+
+// STYLES
+
+%caps {
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
+%highlight {
+  background-color: $base9;
+  color: $base2;
+  padding: 1px 3px;
+  &:hover {
+    background-color: $bg;
+    color: $anchor;
+  }
+}
+
+
+// SIZING
+// http://css-tricks.com/snippets/css/less-mixin-for-rem-font-sizing/
+
+@mixin font-size($size: 16){
+  font-size: $size + px;
+  font-size: $size / 16 + rem;
+}
+
+
+
+// BASE
+
+html {
+    font-size: 100%; // 16px 
+}
+
+body {
+    @extend %sans;
+    @include font-size(16);
+    line-height: 1.5;
+    font-weight: 400;
+}
+
+
+// HEADERS
+
+h1, h2, h3, h4, h5, h6 {
+	color: $base2;
+	line-height: 1.2;
+	font-weight: 300;
+}
+
+h1, h2 {
+	@extend %serif;
+}
+
+h3, h4, h5, h6 {
+	@extend %square;
+}
+
+
+h1 {
+	@include font-size(48);
+	@include breakpoint(mama) {@include font-size(38);}
+	@include breakpoint(baby) {@include font-size(30);}
+}
+h2 {
+	text-transform: capitalize;
+	@include font-size(38);
+	@include breakpoint(mama) {@include font-size(30);}
+	@include breakpoint(baby) {@include font-size(24);}
+}	
+h3 {
+    margin: 2.4em 0 .8em;
+	@include font-size(27);
+	@include breakpoint(mama) {@include font-size(24);}
+	@include breakpoint(baby) {@include font-size(18);}
+}		
+h4 {
+    margin: 1.6em 0 .8em;
+	@include font-size(22);
+	@include breakpoint(mama) {@include font-size(18);}
+	@include breakpoint(baby) {@include font-size(16);}
+}		
+h5 {
+	@include font-size(14);
+}		
+h6 {
+	@extend %square;
+	@extend %caps;
+	color: $base7;
+	@include font-size(11);
+}	
+
+
+
+p, li, dt, dd, label {
+	color: $base3;
+	line-height: 1.8;
+	@extend %sans;
+	@include font-size(18);
+	@include breakpoint(baby) {@include font-size(16);}
+}
+
+ul, ol {
+    margin: 0 0 2.4em;
+    li {
+        margin-bottom: .8em;
+    }
+}
+
+
+b, strong {
+  font-weight: 700;
+}
+
+
+blockquote {
+    padding: 1.8em 16% 2.4em 8%;
+    margin: 0;
+    position: relative;
+    .skip-right {
+        position: absolute;
+        left: 3%;
+        top: 2.6em;
+        width: 16px;
+        height: 16px;
+    }
+    .skip-right, 
+    .skip-right:before, 
+    .skip-right:after {
+        border-color: $base3;
+        border-width: 2px;
+        &:hover,
+        &:hover:before,
+        &:hover:after {
+            border-color: $base3;
+        }
+    }
+    ol, ul {
+        margin-bottom: 1.5em;
+    }
+    p, li {
+    	@include font-size(16);
+    	color: $base5;
+    }
+    h6 {
+    	@include font-size(14);
+    	margin: 0;
+    }
+	@include breakpoint(baby) {
+        .skip-right {
+            left: 0;
+    	}
+	}
+}
+
+
+code,
+kbd,
+pre,
+samp {
+    @extend %square;
+	@include font-size(18);
+	@include breakpoint(baby) {@include font-size(16);}
+}
+
+pre {
+    padding: 1em 1.5em;
+    margin: 1.8em 0;
+    display: block;
+    background: $base2;
+    color: $base0;
+}
+
+
+// LINKS
+
+a 			{
+                color: inherit; 
+                text-decoration: none; 
+                cursor: pointer;     
+                @include transition (all 0.25s ease);
+            }
+a:link 		{color: inherit;}  // unvisited  
+a:visited 	{color: inherit;}	 // visited  
+a:hover 	{color: $anchor;}	 // mouseover  
+a:active 	{color: inherit;}	 // selected  
+
+
+.content p a,
+.content li a {
+    @extend %highlight;
+}
+
+.nav-select a {
+    @extend %highlight;
+    color: $base5;
+}
+
+
+
+
+// BUTTONS
+
+%btn-blank {
+    border: 0;
+    background: transparent;
+}
+
+
+
+// LISTS
+
+.tag-list {
+    list-style: none;
+    width: 100%;
+    margin-bottom: 3em;
+    padding: .4em 0;
+    text-align: center;
+    border-top: 1px solid $base2;
+    border-bottom: 1px solid $base2;
+    line-height: 1;
+    li {
+        @extend %square;
+        display: inline;
+        color: $base3;
+        @include font-size(16);
+        line-height: 1.4;
+        white-space: nowrap;
+        a {
+            background: transparent;
+            padding: 0;
+        }
+    }
+    li:before {
+        content: " + ";
+        color: $base4;
+        margin: 0 5px;
+    }
+    li:first-child:before {
+        content: "";
+        margin: 0;
+    }
+	@include breakpoint(baby) {
+    	margin-bottom: 2em;
+	}
+}
+
+.note-container .tag-list {
+    text-align: left;
+    border: 0;
+    margin-top: 3em;
+    li {
+    	@extend %caps;
+    	@include font-size(11);
+    }
+    li:before {
+        content: "•";
+        color: $base9;
+        margin: 0 7px 0 5px;
+    }
+    li:first-child:before {
+        content: "More notes tagged: ";
+        margin: 0 7px 0 0;
+    }
+    a {
+    	color: $base7;
+    }
+}
+
+
+.link-list {
+    @extend %clearfix;
+    list-style: none;
+    width: 100%;
+    padding: 20px 0;
+    margin: 2.4em 0;
+    li {
+        float: left;
+        width: 160px;
+        margin-bottom: 20px;
+        @extend %square;
+    	@include font-size(16);
+    	@include breakpoint(mama) {@include font-size(16);}
+    	@include breakpoint(baby) {@include font-size(16);}
+    	a, a:hover {
+        	background: transparent;
+    	}
+    }
+	@include breakpoint(baby) {
+    	margin: 1em 0;
+	}
+}
+
+
+
+
+// VARIATIONS
+
+.content-title {
+  margin: 0.5em 0;
+}
+
+.note h1 {
+    text-align: center;
+    margin-top: 1em;
+}
+
+.work-credit {
+    margin-top: -2em;
+    text-align: center;
+}
+
+
+// first paragraph
+
+.content h1 + p,
+.tag-list + p,
+.work-credit + p {
+	@include font-size(22);
+	@include breakpoint(baby) {@include font-size(18);}
+}
+
+
+
+// INFO PAGE
+
+
+.info .content {
+    h3 {
+        margin-top: 2em;
+        clear: both;
+    }
+    ul {
+        list-style: none;
+        padding: 0;    
+        margin: 0;    
+    }
+    li {
+        display: inline-block;
+        vertical-align: top;
+        width: 49%;
+        line-height: 1.6;
+        p {
+            margin: 0;
+            line-height: 1.6;
+        }
+        strong {
+            display: block;
+            margin-bottom: -1.2em;
+            font-weight: normal;
+            font-size: 120%;
+            line-height: 1.2;
+            @extend %square;
+        	@include font-size(21);
+        }
+        @include breakpoint(mama) {
+            width: 100%;
+            margin-bottom: 2em;
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+
+// photo and caption
+
+.info .content p:first-child {
+    position: relative;
+    img {
+        width: 100%;
+        height: auto;
+        margin-top: 2em;
+        margin-top: 2rem;
+    }
+    img + em {
+        @include transform-origin(right top);
+        @include transform(rotate(-90deg));
+        position: absolute;
+        top: 2rem;
+        right: -.25rem;
+    	@extend %square;
+    	@extend %caps;
+    	@include font-size(11);
+        color: $base9;
+        a {
+            color: $base9;
+            background: transparent;
+            &:hover {
+                color: $base5;
+            }
+        }
+    }
+} 
+
+
+
+// TAGS PAGE
+
+.tagged-container .content {
+padding-bottom: 3em;
+}
+.tagged-container .post-preview {
+border: 0;
+}
