@@ -8,14 +8,100 @@ html {
 }
 
 body {
-  background: #F6F3EF;
+  background: $bg;
 }
+
+header {
+    @include outer-container;
+    @include row(table);
+    background: $light;
+    
+}
+
+footer {
+    @include outer-container;
+    @include row(table);
+    background: $navy;
+    
+}
+
+// HOME PAGE
 
 .primary {
-    background: #230C0C;
+    @include outer-container;
+    @include row(table);
+    background: $bg-bold;
+}
+
+.hero {
+    @include breakpoint(medium) {@include span-columns(8);}
+    img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+.intro {
+    @include breakpoint(medium) {@include span-columns(4);}
+    @include pad(10% 20px);
+    h2 {
+        font-weight: 400;
+        @include font-size(18);
+        opacity: .7;
+    }
+    blockquote {
+        color: $light;
+    }
 }
 
 
+
+// SECOND ROW
+
+.secondary {
+    background: $bg;
+    @include outer-container;
+    @include row(table);
+    a {
+        display: block;
+        padding: 110px 0;
+        max-height: 250px;
+        overflow: hidden;
+    }
+    a:hover {
+        background: $base2;
+        background: rgba(0,0,0,.3);
+    }
+}
+
+.retreat {
+    background: url(img/machu.jpg) no-repeat center center;
+    @include breakpoint(medium) {@include span-columns(8);}
+    @include breakpoint(large) {@include span-columns(4);}
+}
+.lessons {
+    background: url(img/private.jpg) no-repeat center center;
+    @include span-columns(6);
+    @include breakpoint(medium) {@include span-columns(4);}
+    @include breakpoint(large) {@include span-columns(2);}
+    h2 {
+        @include font-size(18);
+    }
+}
+.classes {
+    background: url(img/group.jpg) no-repeat center center;
+    @include span-columns(6);
+    @include breakpoint(medium) {@include span-columns(4);}
+    @include breakpoint(large) {@include span-columns(2);}
+    h2 {
+        @include font-size(18);
+    }
+}
+.massage {
+    background: url(img/shiatsu.jpg) no-repeat center center;
+    @include breakpoint(medium) {@include span-columns(8);}
+    @include breakpoint(large) {@include span-columns(4);}
+}
 
 
 

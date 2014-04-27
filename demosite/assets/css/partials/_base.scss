@@ -1,7 +1,7 @@
 // STARTER VARIABLES AND MIXINS
 
 
-// COLORS
+// COLOR PALETTE
 
 $base: #000;
 $base1: lighten($base, 10%);
@@ -15,19 +15,23 @@ $base8: lighten($base, 80%);
 $base9: lighten($base, 90%);
 $base0: lighten($base, 100%);
 
-$bg:    lighten($base, 95%);
+$light:     #FFF;
+$beige:     #F6F3EF;
+$plum:      #230C0C;
+$navy:      #10141A;
+$slate:     #1F2733;
 
-$highlight: #fdf394;
-$highlight-dark: #fee766;
 
-$anchor: #00BFFF;
-$anchor-dark: #0086e5;
+// COLOR VARIABLES
 
-$loud: #FF4E00;
-$loud-dark: saturate(darken($loud, 15), 4);
+$bg:        $beige;
+$bg-bold:   $plum;
 
-$alt: #b6f2f2;
-$alt-dark: darken($alt, 15);
+$anchor:        $slate;
+$anchor-alt:    $navy;
+
+$loud:      red;
+$loud-dark: red;
 
 
 
@@ -47,7 +51,7 @@ $padding: 30px;
 
 // GRID (BOURBON NEAT) //
 
-$grid-columns: 16;
+$grid-columns: 12;
 
 
 // RWD BREAKPOINTS 
