@@ -22,22 +22,22 @@ html {
 
 body {
     @include font-size(16);
-    line-height: 1.5;
+    line-height: 1.4;
 	font-family: $sans;
     font-weight: 400;
+    color: $base3;
 }
 
 
 // HEADERS
 
 h1, h2, h3, h4, h5, h6 {
-	color: $light;
 	line-height: 1.2;
 	font-family: $sans;
 	font-weight: 700;
 	text-transform: uppercase;
 	letter-spacing: 2px;
-	text-align: center;
+	margin: 0;
 }
 
 
@@ -46,6 +46,7 @@ h1 {
 	@include font-size(33);
 	@include breakpoint(medium) {@include font-size(40);}
 	@include breakpoint(large) {@include font-size(44);}
+	line-height: 1;
 }
 h2 {
 	@include font-size(27);
@@ -63,9 +64,9 @@ h4 {
 	@include breakpoint(large) {@include font-size(22);}
 }		
 h5 {
-	@include font-size(15);
-	@include breakpoint(medium) {@include font-size(17);}
-	@include breakpoint(large) {@include font-size(19);}
+	@include font-size(16);
+	@include breakpoint(medium) {@include font-size(18);}
+	@include breakpoint(large) {@include font-size(20);}
 }		
 h6 {
 	color: $base7;
@@ -79,11 +80,25 @@ h6 {
 p, li, dt, dd, label {
 	color: $base3;
 	font-family: $sans;
-	line-height: 1.8;
-	@include font-size(15);
-	@include breakpoint(medium) {@include font-size(17);}
-	@include breakpoint(large) {@include font-size(20);}
+	line-height: 1.6;
+	@include font-size(16);
+	@include breakpoint(medium) {@include font-size(16);}
+	@include breakpoint(large) {@include font-size(18);}
+	// inside sidebars (using parent selector &)
+	aside & {
+    	@include font-size(14);
+    	@include breakpoint(medium) {@include font-size(14);}
+    	@include breakpoint(large) {@include font-size(15);}
+	}
 }
+
+p.lede {
+	@include font-size(18);
+	@include breakpoint(medium) {@include font-size(20);}
+	@include breakpoint(large) {@include font-size(22);}
+}
+
+small {font-size: 85%;}
 
 ul, ol {
     margin: 0 0 2.4em;

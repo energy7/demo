@@ -20,6 +20,7 @@ $beige:     #F6F3EF;
 $plum:      #230C0C;
 $navy:      #10141A;
 $slate:     #1F2733;
+$blue:      #45B8E5;
 
 
 // COLOR VARIABLES
@@ -27,7 +28,7 @@ $slate:     #1F2733;
 $bg:        $beige;
 $bg-bold:   $plum;
 
-$anchor:        $slate;
+$anchor:        $blue;
 $anchor-alt:    $navy;
 
 $loud:      red;
@@ -65,9 +66,6 @@ $grid-columns: 12;
 	}
 	@if $point == large {
  		@media (min-width: 1024px) { @content; }
-	}
-	@if $point == giant {
- 		@media (min-width: 1200px) { @content; }
 	}
 }
 

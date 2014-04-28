@@ -1,46 +1,38 @@
 
-/*** BASE ***/
+// FORMS
+
 
 fieldset {
   border: 0;
-	padding: 0;
+  padding: 0;
 }
 
 textarea,
 input[type="text"],
-input[type="password"]
- {
-  display: block;
-  font-size: 14px;
-  padding: 5px;
+input[type="password"] 
+{
+    display: inline-block;
+    @include font-size(13);
+    padding: 10px;
 }
 
+
+.button,
+.button:visited,
+button,
 input[type="submit"] {
-  -webkit-appearance: button;
-  cursor: pointer;
-  background: $loud;
-  border: 0;
-  color: $base0;
-  text-transform: uppercase;
-  padding: .5em 2em;
-  &:hover {
-    background: $loud-dark;
-    color: $base0;
-  }
-}
-
-/*** LOGIN FORM ***/
-
-
-.login {
-	width: 320px;
-	margin: 100px auto;
-	padding: 20px;
-	border: 1px solid $base9;
-	clear: both;
-}
-
-.error {
-  font-size: 12px;
-  display: block;
+    cursor: pointer;
+    border: 0;
+    border-radius: 0;
+    padding: .5em 3em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background: $base;
+    color: $light;
+    @include font-size(16);
+    @include transition();
+    &:hover {
+        background: $anchor;
+        color: $light;
+    }
 }
