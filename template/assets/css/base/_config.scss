@@ -1,0 +1,64 @@
+// THEME CONFIGURATION
+
+// standardize box model across browsers! 
+// IE8 and up. bit.ly/1eXrOej 
+*, *:before, *:after {
+    -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+}
+
+
+// COLOR PALETTE
+
+$base: #000;
+$base1: lighten($base, 10%);
+$base2: lighten($base, 20%);
+$base3: lighten($base, 30%);
+$base4: lighten($base, 40%);
+$base5: lighten($base, 50%);
+$base6: lighten($base, 60%);
+$base7: lighten($base, 70%);
+$base8: lighten($base, 80%);
+$base9: lighten($base, 90%);
+$base0: lighten($base, 100%);
+
+$light:     #FFF;
+$beige:     #F6F3EF;
+$plum:      #230C0C;
+$navy:      #10141A;
+$slate:     #1F2733;
+$blue:      #45B8E5;
+
+
+// COLOR VARIABLES
+// Using color variables properly (ht @bones)
+// http://sachagreif.com/sass-color-variables/
+
+$bg:        $beige;
+$bg-bold:   $plum;
+
+$anchor:        $blue;
+$anchor-alt:    $navy;
+
+$loud:      red;
+$loud-dark: red;
+
+
+
+// LAYERS
+
+$layer1: 1; // content
+$layer2: 2; // hovers
+$layer3: 3; // cloak
+$layer4: 4; // lightbox
+$layer5: 5; // lightbox content
+
+
+// SPACING
+
+$padding: 30px;
+
+
+// GRID (BOURBON NEAT) //
+
+$grid-columns: 12;
+

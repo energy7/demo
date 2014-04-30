@@ -1,0 +1,55 @@
+// BASE CONTAINERS
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background: $bg;
+}
+
+
+hr {
+	border: 0;
+	height: 1px;
+	background: $base8;
+	margin:2rem 0 4rem 0;
+}
+
+
+img, video, object { 
+  max-width: 100% 
+}
+
+
+nav {
+    
+}
+
+aside {
+    @include breakpoint(large) {@include span-columns(3); margin-left: 0;}
+}
+
+
+
+
+// CONTAINER MODULES
+
+.primary {
+    @include outer-container;
+    @include row(table);
+}
+
+.hero {
+    img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+.content {
+    @include pad(0 20px);
+    @include breakpoint(medium) {@include span-columns(9); @include pad(0 40px);}
+    @include breakpoint(large) {@include span-columns(7);}
+}
