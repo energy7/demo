@@ -1,13 +1,12 @@
 // TYPEFACES
 
-$sans: 'Open Sans', 'sans-serif'; 
+$sans: 'Source Sans Pro', 'sans-serif'; 
 
 
 
 // RESPONSIVE TYPOGRAPHY
 // http://css-tricks.com/rems-ems/
 
-// Document level adjustments
 html {
     font-size: 80%;
     line-height: 1.4;
@@ -15,41 +14,11 @@ html {
 	@include breakpoint(large) {font-size: 100%;}
 }
 
-
-// Modules use rems to scale with document
-.header {
-  font-size: 1.5rem;
-}
-.footer {
-  font-size: 0.75rem;
-}
-.sidebar {
-  font-size: 0.85rem;
-}
-
-// Type uses ems to scale with modules
-h1 {
-  font-size: 3em;
-}
-h2 {
-  font-size: 2.5em;
-}
-h3 {
-  font-size: 2em;
-}
-
-
-// BASE
-
-
 body {
 	font-family: $sans;
     font-weight: 400;
     color: $base3;
 }
-
-
-// HEADERS
 
 h1, h2, h3, h4, h5, h6 {
 	line-height: 1.2;
@@ -58,39 +27,25 @@ h1, h2, h3, h4, h5, h6 {
 	margin: 0;
 }
 
-
-
 h1 {
 	@include font-size(33);
-	@include breakpoint(medium) {@include font-size(40);}
-	@include breakpoint(large) {@include font-size(44);}
 	line-height: 1;
 }
 h2 {
 	@include font-size(27);
-	@include breakpoint(medium) {@include font-size(30);}
-	@include breakpoint(large) {@include font-size(33);}
 }	
 h3 {
 	@include font-size(22);
-	@include breakpoint(medium) {@include font-size(24);}
-	@include breakpoint(large) {@include font-size(26);}
 }		
 h4 {
 	@include font-size(18);
-	@include breakpoint(medium) {@include font-size(20);}
-	@include breakpoint(large) {@include font-size(22);}
 }		
 h5 {
 	@include font-size(16);
-	@include breakpoint(medium) {@include font-size(18);}
-	@include breakpoint(large) {@include font-size(20);}
 }		
 h6 {
 	color: $base7;
 	@include font-size(12);
-	@include breakpoint(medium) {@include font-size(14);}
-	@include breakpoint(large) {@include font-size(16);}
 }	
 
 
@@ -100,20 +55,10 @@ p, li, dt, dd, label {
 	font-family: $sans;
 	line-height: 1.6;
 	@include font-size(16);
-	@include breakpoint(medium) {@include font-size(16);}
-	@include breakpoint(large) {@include font-size(18);}
-	// inside sidebars (using parent selector &)
-	aside & {
-    	@include font-size(14);
-    	@include breakpoint(medium) {@include font-size(14);}
-    	@include breakpoint(large) {@include font-size(15);}
-	}
 }
 
 p.lede {
 	@include font-size(18);
-	@include breakpoint(medium) {@include font-size(20);}
-	@include breakpoint(large) {@include font-size(22);}
 }
 
 small {font-size: 85%;}
@@ -136,15 +81,8 @@ blockquote {
     padding: $padding 0;
     font-style: italic;
     text-align: center;
-    strong {
-        font-weight: 400;
-        opacity: .8;
-    }
-    span {
-        opacity: .5;
-    }
     cite {
-        opacity: .25;
+        color: $base5;
         white-space: nowrap;
     }
 }
@@ -155,8 +93,6 @@ pre,
 samp {
     font-family: Courier, 'Courier New', monospace;
 	@include font-size(15);
-	@include breakpoint(medium) {@include font-size(17);}
-	@include breakpoint(large) {@include font-size(20);}
 }
 
 pre {
@@ -166,5 +102,13 @@ pre {
     background: $base2;
     color: $base0;
 }
+
+hr {
+	border: 0;
+	height: 1px;
+	background: $base8;
+	margin:2rem 0 4rem 0;
+}
+
 
 

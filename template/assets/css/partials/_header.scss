@@ -3,18 +3,10 @@
 header {
     @include outer-container;
     @include row(table);
-    background: $light;
+    background: $base0;
     
 }
 
-.logo {
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-weight: 700;
-    padding: 20px;
-    display: inline-block;
-    line-height: 1;
-}
 
 
 // RESPONSIVE NAV

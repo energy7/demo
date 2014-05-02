@@ -2,7 +2,6 @@
 
 
 
-
 .nav-side {
     @include breakpoint(medium) {@include span-columns(3);}
     @include breakpoint(large) {@include span-columns(2);}
@@ -14,8 +13,6 @@
     li {
         display: inline-block;
         text-align: center;
-        text-transform: uppercase;
-        letter-spacing: 1px;
         white-space: nowrap;
         @include font-size(13); 
         margin: 0px;
@@ -30,7 +27,7 @@
         display: block;
         padding: 10px 20px;
         text-shadow: none;
-        color: $light;
+        color: $base0;
         opacity: .8;
     }
     li a:hover {
