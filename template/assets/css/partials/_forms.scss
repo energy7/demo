@@ -11,8 +11,8 @@ textarea,
 input[type="text"],
 input[type="password"] 
 {
-    display: inline-block;
     @include font-size(13);
+    display: inline-block;
     padding: 10px;
 }
 
@@ -22,6 +22,8 @@ input[type="password"]
 .button:visited,
 button,
 input[type="submit"] {
+    @include font-size(16);
+    @include transition();
     cursor: pointer;
     border: 0;
     border-radius: 0;
@@ -30,8 +32,6 @@ input[type="submit"] {
     letter-spacing: 1px;
     background: $base;
     color: $base0;
-    @include font-size(16);
-    @include transition();
     &:hover {
         background: $anchor;
         color: $base0;

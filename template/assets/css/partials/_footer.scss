@@ -2,6 +2,7 @@
 
 footer {
     clear: both;
+    text-align: center;
     @include outer-container;
-    @include row(table);
+    @include pad(30px);
 }

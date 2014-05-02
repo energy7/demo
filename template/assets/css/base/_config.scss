@@ -1,11 +1,5 @@
 // THEME CONFIGURATION
 
-// standardize box model across browsers! 
-// IE8 and up. bit.ly/1eXrOej 
-*, *:before, *:after {
-    -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
-}
-
 
 // COLOR PALETTE
 
@@ -21,8 +15,8 @@ $base8: lighten($base, 80%);
 $base9: lighten($base, 90%);
 $base0: lighten($base, 100%);
 
-$blue:      #45B8E5;
-$navy:      #10141A;
+$blue:      #0198E1;
+$navy:      #236B8E;
 $red:       #CC0000;
 $brick:     #990000;
 
@@ -61,7 +55,7 @@ $layer5: 5; // lightbox content
 // SPACING
 // keep some common variables standard
 
-$padding: 30px;
+$padding: 20px;
 
 
 
