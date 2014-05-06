@@ -3,15 +3,15 @@
 // LINKS
 
 a {
-    color: inherit; 
+    color: $anchor; 
     text-decoration: none; 
     cursor: pointer;     
     @include transition (all 0.25s ease);
 }
-a:link 		{color: inherit;}  // unvisited  
-a:visited 	{color: inherit;}  // visited  
-a:hover 	{color: $anchor;}  // mouseover  
-a:active 	{color: inherit;}  // selected  
+a:link 		{color: $anchor;}  // unvisited  
+a:visited 	{color: $anchor;}  // visited  
+a:hover 	{color: $anchor-alt;}  // mouseover  
+a:active 	{color: $anchor;}  // selected  
 
 
 

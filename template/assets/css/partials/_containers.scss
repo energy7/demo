@@ -28,6 +28,7 @@ aside {
 
 // CONTAINER MODULES
 
+.wrapper,
 .intro,
 .content {
     @include outer-container;

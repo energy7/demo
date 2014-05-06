@@ -1,7 +1,11 @@
 // MENUS 
 
+// base styles first
+nav {
+    
+}
 
-
+// then modular
 .nav-sub {
     ul {
         margin: 0;
@@ -25,4 +29,10 @@
         background: $base4;
     }
 }
+
+// then page-specific
+.welcome-nav {
+    background: $base3;
+}
+
 

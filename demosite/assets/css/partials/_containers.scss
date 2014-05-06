@@ -37,11 +37,11 @@ body {
         text-align: center;
         color: $light;
     }
-    .primary {
+    .intro {
         background: $bg-bold;
     }
     
-    .hero {
+    .intro-hero {
         @include breakpoint(large) {@include span-columns(8);}
     }
     
